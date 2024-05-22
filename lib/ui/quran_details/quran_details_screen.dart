@@ -12,7 +12,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     QuranDetailsArgs args =
-    ModalRoute.of(context)?.settings.arguments as QuranDetailsArgs;
+        ModalRoute.of(context)?.settings.arguments as QuranDetailsArgs;
     if (lines.isEmpty) {
       readQuranFiles(args.index);
     }
@@ -22,33 +22,52 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
               image: AssetImage("assets/images/main_background.png"),
               fit: BoxFit.fill)),
       child: Scaffold(
-        appBar: AppBar(
-          title: Text("سورة ${args.title}",style: TextStyle(fontFamily: "El Messiri",fontSize: 26,fontWeight: FontWeight.bold),),
-        ),
-
-        body: Card( color: Colors.white,
-          margin: EdgeInsets.all(20),
-          /*elevation: 20,*/
-          child: lines.isNotEmpty
-              ? ListView.separated(
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.only(top: 8.0,bottom: 3,),
-                child: Center(
-
-                  child: Text(
-                    "${lines[index]} (${index + 1})",
-                    textDirection: TextDirection.rtl,
-                    style: TextStyle(color: Colors.black,fontSize: 16),
-                  ),
+        appBar: AppBar(),
+        body: Column(
+          children: [
+            Text(
+              "سورة ${args.title}",
+              style: TextStyle(
+                  fontFamily: "El Messiri",
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  color: Colors.white,
+                  margin: EdgeInsets.all(20),
+                  /*elevation: 20,*/
+                  child: lines.isNotEmpty
+                      ? ListView.separated(
+                          itemBuilder: (context, index) => Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 8.0,
+                                  bottom: 3,
+                                ),
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      "${lines[index]} (${index + 1})",
+                                      textDirection: TextDirection.rtl,
+                                      style: TextStyle(color: Colors.black, fontSize: 20),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                          separatorBuilder: (context, index) => Container(
+                                height: 5,
+                              ),
+                          itemCount: lines.length)
+                      : Center(
+                          child: CircularProgressIndicator(),
+                        ),
                 ),
               ),
-              separatorBuilder: (context, index) => Container(
-                height: 5,
-              ),
-              itemCount: lines.length)
-              : Center(
-            child: CircularProgressIndicator(),
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -58,7 +77,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
 
   void readQuranFiles(int index) async {
     String quran = await rootBundle.loadString("assets/files/${index + 1}.txt");
-    lines = quran.split("\n");
+    lines = quran.trim().split("\n");
     setState(() {});
   }
 }
