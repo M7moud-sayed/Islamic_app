@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islamic_app/ui/home/hadeth_details/hadeth_details_screen.dart';
 
+import '../hadeth_details/hadeth_details_screen.dart';
 import 'hadeth_widget.dart';
 
 class HadethTitleItem extends StatelessWidget {
