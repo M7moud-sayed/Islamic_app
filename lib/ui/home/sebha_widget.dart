@@ -11,8 +11,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
   int counter = 0;
   int index = 0;
   double angle = 0;
-  List<String> sebhaList = ["سبحان لله", "الحمد لله", "الله اكبر"];
-
+  List<String> sebhaList = ["سـبحـان الله", "الـحمـد الله", "الله اكبر"];
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
