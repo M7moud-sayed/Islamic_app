@@ -36,10 +36,21 @@ class MyApp extends StatelessWidget {
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Color(0xFFB7935F),
+          type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.black,
-          selectedIconTheme: IconThemeData(size: 32),
-          unselectedIconTheme: IconThemeData(size: 25),
+          selectedLabelStyle: TextStyle(
+            fontSize: 18,
+            fontFamily: "El Messiri",
+          ),
+          selectedIconTheme: IconThemeData(color: Colors.black),
+          unselectedLabelStyle: TextStyle(
+            fontSize: 16,
+            fontFamily: "El Messiri",
+            color: Colors.white,
+            fontWeight: FontWeight.normal,
+          ),
+          unselectedItemColor: Colors.white,
+          unselectedIconTheme: IconThemeData(color: Colors.white),
         ),
         dividerTheme: const DividerThemeData(
           color: Color(0xFFB7935F),

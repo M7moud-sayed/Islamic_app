@@ -34,14 +34,14 @@ class _SebhaWidgetState extends State<SebhaWidget> {
           ],
         ),
         const SizedBox(
-          height: 30,
+          height: 28,
         ),
         Text(
           "عدد التسبيحات",
           style: TextStyle(fontFamily: "El Messiri",fontSize: 24,fontWeight: FontWeight.bold),
         ),
         const SizedBox(
-          height: 20,
+          height: 18,
         ),
         Container(
           padding: const EdgeInsets.all(25),

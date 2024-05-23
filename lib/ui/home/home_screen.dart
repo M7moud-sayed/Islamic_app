@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(backgroundColor: Theme.of(context).colorScheme.primary,icon: ImageIcon(AssetImage("assets/images/quran_icn.png")),label: "Quran"),
             BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/hadeth_icn.png")),label: "Hadeth"),
             BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/radio_icn.png")),label: "Radio"),
-            BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/sebha_icn.png")),label: "Sebha"),
+            BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/sebha_icn.png")),label: "Sebha",),
             BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Settings"),
           ],
         ),
