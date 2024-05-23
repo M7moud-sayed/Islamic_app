@@ -90,19 +90,19 @@ class _SebhaWidgetState extends State<SebhaWidget> {
     );
   }
 
-  void sebha() {
-    if (counter < 33) {
-      counter++;
-      angle += 3;
-    } else {
-      if (index < 2) {
-        index++;
-        counter = 0;
-      } else {
-        index = 0;
-        counter = 0;
+        void sebha() {
+          if (counter < 33) {
+            counter++;
+            angle += 3;
+          } else {
+            if (index < 2) {
+              index++;
+              counter = 0;
+            } else {
+              index = 0;
+              counter = 0;
+            }
+          }
+          setState(() {});
+        }
       }
-    }
-    setState(() {});
-  }
-}
