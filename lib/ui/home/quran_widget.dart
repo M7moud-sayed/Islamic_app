@@ -127,8 +127,6 @@ class _QuranWidgetState extends State<QuranWidget> {
     "الناس"
   ];
 
-
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -139,8 +137,13 @@ class _QuranWidgetState extends State<QuranWidget> {
           children: [
             Expanded(
                 child: Center(
-                    child:
-                    Text("اسم السورة",style: TextStyle(fontFamily: "El Messiri",fontSize: 22,fontWeight: FontWeight.bold),))),
+                    child: Text(
+              "اسم السورة",
+              style: TextStyle(
+                  fontFamily: "El Messiri",
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold),
+            ))),
             const SizedBox(
               width: 1.5,
               height: 35,
@@ -148,8 +151,11 @@ class _QuranWidgetState extends State<QuranWidget> {
             ),
             Expanded(
                 child: Center(
-                    child:
-                    Text("رقم السورة",style: TextStyle(fontFamily: "El Messiri",fontSize: 22,fontWeight: FontWeight.bold)))),
+                    child: Text("رقم السورة",
+                        style: TextStyle(
+                            fontFamily: "El Messiri",
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold)))),
           ],
         ),
         const Divider(),
@@ -160,7 +166,7 @@ class _QuranWidgetState extends State<QuranWidget> {
                 return QuranTitleWidget(
                     title: suraNames[index],
                     index: index,
-                    versesNumber: (index+1).toString());
+                    versesNumber: (index + 1).toString());
               },
               separatorBuilder: (context, index) {
                 return Container(
