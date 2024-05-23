@@ -25,12 +25,20 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
         appBar: AppBar(),
         body: Column(
           children: [
-            Text(
-              "سورة ${args.title}",
-              style: TextStyle(
-                  fontFamily: "El Messiri",
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                    "سورة ${args.title}",
+                    style: TextStyle(
+                        fontFamily: "El Messiri",
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold),
+                  ),
+
+                SizedBox(width: 10,),
+                Icon(Icons.play_circle_fill_rounded,size: 24,color: Color(0xFFB7935F),),
+              ],
             ),
             Expanded(
               child: Padding(
