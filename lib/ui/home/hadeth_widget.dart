@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:islamic_app/ui/home/hadeth_title_item.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethWidget extends StatefulWidget {
   const HadethWidget({super.key});
@@ -25,7 +26,7 @@ class _HadethWidgetState extends State<HadethWidget> {
         Divider(),
         Center(
           child: Text(
-            "الاحــاديــث",
+            AppLocalizations.of(context)!.hadeth,
             style: Theme.of(context).textTheme.bodyLarge
           ),
         ),

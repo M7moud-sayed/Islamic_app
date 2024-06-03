@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/style/app_theme.dart';
 import 'package:islamic_app/ui/home/quran_title_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranWidget extends StatefulWidget {
   QuranWidget({super.key});
@@ -138,7 +139,7 @@ class _QuranWidgetState extends State<QuranWidget> {
             Expanded(
               child: Center(
                 child: Text(
-                  "اسم السورة",
+                  AppLocalizations.of(context)!.chapterTitle,
                   style: Theme.of(context).textTheme.bodyLarge),
               ),
             ),
@@ -149,7 +150,7 @@ class _QuranWidgetState extends State<QuranWidget> {
             ),
             Expanded(
               child: Center(
-                child: Text("رقم السورة",
+                child: Text(AppLocalizations.of(context)!.chapterNumber,
                     style: Theme.of(context).textTheme.bodyLarge),
               ),
             )

@@ -6,5 +6,9 @@
   "hadeth" : "حديث",
   "radio" : "راديو",
   "sebha" : "سبحه",
-  "settings" : "الاعدادات"
+  "settings" : "الاعدادات",
+  "chapterTitle" : "اسم السورة",
+  "chapterNumber" : "رقم السورة",
+  "numberOfPraises" : "عدد التسبيحات" ,
+  "holyQuranRadio" : "اذاعة القرآن الكريم"
 }
