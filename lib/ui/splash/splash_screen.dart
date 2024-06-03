@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:islamic_app/style/app_theme.dart';
 import 'package:islamic_app/ui/home/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -23,8 +24,8 @@ class _SplashScreenState extends State<SplashScreen> {
     Size mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: Image.asset(
-        "assets/images/splash_background.png",
+      body: Image.asset(AppTheme.isDark?"assets/images/splash_dark_screen.jpg"
+        :"assets/images/splash_background.png",
         height: mediaQuery.height,
         width: mediaQuery.width,
         fit: BoxFit.cover,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../style/app_theme.dart';
+
 class QuranDetailsScreen extends StatefulWidget {
   static const String routeName = "QuranDetailsScreen";
 
@@ -19,7 +21,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/main_background.png"),
+              image: AssetImage(AppTheme.isDark?"assets/images/main_dark.jpg":"assets/images/main_background.png"),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(),
@@ -30,10 +32,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
               children: [
                 Text(
                     "سورة ${args.title}",
-                    style: TextStyle(
-                        fontFamily: "El Messiri",
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
 
                 SizedBox(width: 10,),
@@ -44,7 +43,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  color: Colors.white,
+                  color: AppTheme.isDark?Theme.of(context).primaryColorDark:Colors.white,
                   margin: EdgeInsets.all(20),
                   /*elevation: 20,*/
                   child: lines.isNotEmpty
@@ -60,7 +59,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
                                     child: Text(
                                       "${lines[index]} (${index + 1})",
                                       textDirection: TextDirection.rtl,
-                                      style: TextStyle(color: Colors.black, fontSize: 20),
+                                      style: Theme.of(context).textTheme.bodySmall,
                                     ),
                                   ),
                                 ),
