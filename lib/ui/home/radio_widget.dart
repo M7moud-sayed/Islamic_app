@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islamic_app/style/app_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioWidget extends StatelessWidget {
   const RadioWidget({super.key});
@@ -15,7 +16,7 @@ class RadioWidget extends StatelessWidget {
         ),
       ),
       SizedBox(height: 100),
-      Center(child: Text("إذاعـة الـقـرآن الـكـريـم ",style: TextStyle(fontSize: 24,fontFamily: "El Messiri",fontWeight: FontWeight.bold),)),
+      Center(child: Text(AppLocalizations.of(context)!.holyQuranRadio,style: TextStyle(fontSize: 24,fontFamily: "El Messiri",fontWeight: FontWeight.bold),)),
       SizedBox(height: 100),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

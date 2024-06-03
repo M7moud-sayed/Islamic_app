@@ -6,5 +6,10 @@
   "hadeth" : "Hadeth",
   "radio" : "Radio",
   "sebha" : "Sebha",
-  "settings" : "Settings"
+  "settings" : "Settings",
+  "chapterTitle" : "Chapter Title",
+  "chapterNumber" : "Chapter Number",
+  "numberOfPraises" : "Number Of Praises" ,
+  "holyQuranRadio" : "Holy Quran Radio"
+
 }
