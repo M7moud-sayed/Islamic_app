@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:islamic_app/style/app_theme.dart';
 import 'package:islamic_app/ui/home/quran_title_widget.dart';
 
 class QuranWidget extends StatefulWidget {
@@ -136,26 +136,23 @@ class _QuranWidgetState extends State<QuranWidget> {
         Row(
           children: [
             Expanded(
-                child: Center(
-                    child: Text(
-              "اسم السورة",
-              style: TextStyle(
-                  fontFamily: "El Messiri",
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold),
-            ))),
+              child: Center(
+                child: Text(
+                  "اسم السورة",
+                  style: Theme.of(context).textTheme.bodyLarge),
+              ),
+            ),
             const SizedBox(
               width: 1.5,
               height: 35,
               child: VerticalDivider(),
             ),
             Expanded(
-                child: Center(
-                    child: Text("رقم السورة",
-                        style: TextStyle(
-                            fontFamily: "El Messiri",
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold)))),
+              child: Center(
+                child: Text("رقم السورة",
+                    style: Theme.of(context).textTheme.bodyLarge),
+              ),
+            )
           ],
         ),
         const Divider(),

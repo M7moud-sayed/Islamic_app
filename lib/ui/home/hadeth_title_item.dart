@@ -13,8 +13,7 @@ class HadethTitleItem extends StatelessWidget {
       onTap: (){
         Navigator.pushNamed(context, HadethDetailsScreen.routeName,arguments: hadeth);
       },
-      child: Text(hadeth.title,textAlign:TextAlign.center,style:TextStyle(fontFamily: "El Messiri",
-        fontSize: 22,fontWeight: FontWeight.bold)),
+      child: Text(hadeth.title,textAlign:TextAlign.center,style:Theme.of(context).textTheme.bodyMedium),
     );
   }
 }

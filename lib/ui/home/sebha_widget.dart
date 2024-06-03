@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/style/app_theme.dart';
 
 class SebhaWidget extends StatefulWidget {
   const SebhaWidget({super.key});
@@ -38,7 +39,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
         ),
         Text(
           "عدد التسبيحات",
-          style: TextStyle(fontFamily: "El Messiri",fontSize: 24,fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
         const SizedBox(
           height: 18,
@@ -47,10 +48,10 @@ class _SebhaWidgetState extends State<SebhaWidget> {
           padding: const EdgeInsets.all(25),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
-              color: Theme.of(context).primaryColor),
+              color: AppTheme.isDark?Theme.of(context).primaryColorDark:Theme.of(context).primaryColor,),
           child: Text(
             "$counter",
-            style: TextStyle(fontFamily: "El Messiri",fontSize: 18,fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.bodySmall,
           ),
         ),
         const SizedBox(
@@ -77,7 +78,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
           minWidth: 170,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          color: Theme.of(context).primaryColor,
+          color: AppTheme.isDark?Theme.of(context).dividerColor:Theme.of(context).primaryColor,
           onPressed: () {
             sebha();
           },

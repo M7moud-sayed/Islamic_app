@@ -26,10 +26,7 @@ class _HadethWidgetState extends State<HadethWidget> {
         Center(
           child: Text(
             "الاحــاديــث",
-            style: TextStyle(
-                fontFamily: "El Messiri",
-                fontSize: 22,
-                fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.bodyLarge
           ),
         ),
         const Divider(),
