@@ -3,6 +3,10 @@ import 'package:islamic_app/style/app_theme.dart';
 import 'package:islamic_app/ui/home/language_sheet.dart';
 import 'package:islamic_app/ui/home/theme_sheet.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
+
 class SettingsWidget extends StatefulWidget {
   const SettingsWidget({super.key});
 
@@ -13,6 +17,7 @@ class SettingsWidget extends StatefulWidget {
 class _SettingsWidgetState extends State<SettingsWidget> {
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Column(
@@ -20,7 +25,10 @@ class _SettingsWidgetState extends State<SettingsWidget> {
         children: [
           Text(
             AppLocalizations.of(context)!.language,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium
+                ?.copyWith(fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 10,
@@ -34,11 +42,17 @@ class _SettingsWidgetState extends State<SettingsWidget> {
               width: double.infinity,
               padding: EdgeInsets.all(10.0),
               decoration: BoxDecoration(
-                  color: AppTheme.isDark?Theme.of(context).primaryColorDark:Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: AppTheme.isDark?Theme.of(context).dividerColor:Theme.of(context).primaryColor),),
+                color: provider.theme == ThemeMode.dark
+                    ? Theme.of(context).primaryColorDark
+                    : Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(
+                    color: provider.theme == ThemeMode.dark
+                        ? Theme.of(context).dividerColor
+                        : Theme.of(context).primaryColor),
+              ),
               child: Text(
-                "English",
+                provider.language=="ar"?"العربية":"English",
                 style: Theme.of(context).textTheme.bodySmall,
                 textAlign: TextAlign.center,
               ),
@@ -49,7 +63,10 @@ class _SettingsWidgetState extends State<SettingsWidget> {
           ),
           Text(
             AppLocalizations.of(context)!.theme,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium
+                ?.copyWith(fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 10,
@@ -63,11 +80,17 @@ class _SettingsWidgetState extends State<SettingsWidget> {
               width: double.infinity,
               padding: EdgeInsets.all(10.0),
               decoration: BoxDecoration(
-                  color: AppTheme.isDark?Theme.of(context).primaryColorDark:Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: AppTheme.isDark?Theme.of(context).dividerColor:Theme.of(context).primaryColor),),
+                color: provider.theme == ThemeMode.dark
+                    ? Theme.of(context).primaryColorDark
+                    : Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(
+                    color: provider.theme == ThemeMode.dark
+                        ? Theme.of(context).dividerColor
+                        : Theme.of(context).primaryColor),
+              ),
               child: Text(
-                "Light",
+                provider.theme == ThemeMode.dark ? "Dark" : "Light",
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ),
@@ -84,7 +107,6 @@ void showThemeBottomSheet(BuildContext context) {
       builder: (context) {
         return ThemeSheet();
       });
-
 }
 
 void showLanguageBottomSheet(BuildContext context) {

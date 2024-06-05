@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/style/app_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class SebhaWidget extends StatefulWidget {
   const SebhaWidget({super.key});
@@ -14,8 +17,10 @@ class _SebhaWidgetState extends State<SebhaWidget> {
   int index = 0;
   double angle = 0;
   List<String> sebhaList = ["سـبحـان الله", "الـحمـد الله", "الله اكبر"];
+
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     var mediaQuery = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
@@ -40,7 +45,10 @@ class _SebhaWidgetState extends State<SebhaWidget> {
         ),
         Text(
           AppLocalizations.of(context)!.numberOfPraises,
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(
           height: 18,
@@ -48,8 +56,11 @@ class _SebhaWidgetState extends State<SebhaWidget> {
         Container(
           padding: const EdgeInsets.all(25),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              color: AppTheme.isDark?Theme.of(context).primaryColorDark:Theme.of(context).primaryColor,),
+            borderRadius: BorderRadius.circular(25),
+            color: provider.theme==ThemeMode.dark
+                ? Theme.of(context).primaryColorDark
+                : Theme.of(context).primaryColor,
+          ),
           child: Text(
             "$counter",
             style: Theme.of(context).textTheme.bodySmall,
@@ -79,32 +90,37 @@ class _SebhaWidgetState extends State<SebhaWidget> {
           minWidth: 170,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          color: AppTheme.isDark?Theme.of(context).dividerColor:Theme.of(context).primaryColor,
+          color: provider.theme==ThemeMode.dark
+              ? Theme.of(context).dividerColor
+              : Theme.of(context).primaryColor,
           onPressed: () {
             sebha();
           },
           child: Text(
             sebhaList[index],
-            style: TextStyle(fontFamily: "El Messiri," ,fontWeight: FontWeight.bold,fontSize: 18),
+            style: TextStyle(
+                fontFamily: "El Messiri,",
+                fontWeight: FontWeight.bold,
+                fontSize: 18),
           ),
         ),
       ]),
     );
   }
 
-        void sebha() {
-          if (counter < 33) {
-            counter++;
-            angle += 3;
-          } else {
-            if (index < 2) {
-              index++;
-              counter = 0;
-            } else {
-              index = 0;
-              counter = 0;
-            }
-          }
-          setState(() {});
-        }
+  void sebha() {
+    if (counter < 33) {
+      counter++;
+      angle += 3;
+    } else {
+      if (index < 2) {
+        index++;
+        counter = 0;
+      } else {
+        index = 0;
+        counter = 0;
       }
+    }
+    setState(() {});
+  }
+}

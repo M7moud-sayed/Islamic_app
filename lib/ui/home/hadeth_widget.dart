@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:islamic_app/generated/l10n.dart';
 import 'package:islamic_app/ui/home/hadeth_title_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -25,10 +26,8 @@ class _HadethWidgetState extends State<HadethWidget> {
                 Center(child: Image.asset("assets/images/hadeth_header.jpg"))),
         Divider(),
         Center(
-          child: Text(
-            AppLocalizations.of(context)!.hadeth,
-            style: Theme.of(context).textTheme.bodyLarge
-          ),
+          child: Text(AppLocalizations.of(context)!.hadeth,
+              style: Theme.of(context).textTheme.bodyLarge),
         ),
         const Divider(),
         Expanded(
@@ -38,8 +37,8 @@ class _HadethWidgetState extends State<HadethWidget> {
                   child: CircularProgressIndicator(),
                 )
               : ListView.separated(
-                  itemBuilder: (context, index) => HadethTitleItem(hadeth: allHadeth[index]),
-
+                  itemBuilder: (context, index) =>
+                      HadethTitleItem(hadeth: allHadeth[index]),
                   separatorBuilder: (context, index) {
                     return Container(
                       margin: EdgeInsets.all(5),

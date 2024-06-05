@@ -21,8 +21,10 @@ dependencies:
 
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.13.1"
   flutter_test:
     sdk: flutter
+
 
 
   flutter_lints: ^3.0.0
@@ -34,6 +36,7 @@ flutter:
   assets:
     - assets/files/
     - assets/images/
+    - assets/icons/
 
   fonts:
     - family: "El Messiri"
@@ -44,3 +47,4 @@ flutter:
         - asset: assets/fonts/ElMessiri-Regular.ttf
 flutter_intl:
   enabled: true
+
