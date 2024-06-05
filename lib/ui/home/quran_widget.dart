@@ -138,9 +138,8 @@ class _QuranWidgetState extends State<QuranWidget> {
           children: [
             Expanded(
               child: Center(
-                child: Text(
-                  AppLocalizations.of(context)!.chapterTitle,
-                  style: Theme.of(context).textTheme.bodyLarge),
+                child: Text(AppLocalizations.of(context)!.chapterTitle,
+                    style: Theme.of(context).textTheme.bodyLarge),
               ),
             ),
             const SizedBox(

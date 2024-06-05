@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/providers/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class LanguageSheet extends StatefulWidget {
   const LanguageSheet({super.key});
@@ -10,16 +12,21 @@ class LanguageSheet extends StatefulWidget {
 class _LanguageSheetState extends State<LanguageSheet> {
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          getSelectedItem("English"),
+          getSelectedItem(provider.language == "ar"?"العربية":"English"),
           SizedBox(
             height: 15,
           ),
-          getUnselectedItem("العربية"),
+          InkWell(onTap: (){
+            Navigator.pop(context);
+            provider.changeLanguage(provider.language=="ar"?"en":"ar");
+          },
+              child: getUnselectedItem(provider.language == "ar"?"English":"العربية")),
         ],
       ),
     );
@@ -47,7 +54,7 @@ class _LanguageSheetState extends State<LanguageSheet> {
   Widget getUnselectedItem(String language) {
     return Text(
       language,
-      style: TextStyle(fontSize: 18),
+      style: TextStyle(color: Theme.of(context).dividerColor, fontSize: 18),
     );
   }
 }

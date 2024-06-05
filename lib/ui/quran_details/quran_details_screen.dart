@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
+import '../../providers/settings_provider.dart';
 import '../../style/app_theme.dart';
 
 class QuranDetailsScreen extends StatefulWidget {
@@ -13,6 +15,7 @@ class QuranDetailsScreen extends StatefulWidget {
 class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     QuranDetailsArgs args =
         ModalRoute.of(context)?.settings.arguments as QuranDetailsArgs;
     if (lines.isEmpty) {
@@ -21,7 +24,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(AppTheme.isDark?"assets/images/main_dark.jpg":"assets/images/main_background.png"),
+              image: AssetImage(provider.theme==ThemeMode.dark?"assets/images/main_dark.jpg":"assets/images/main_background.png"),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(),
@@ -36,14 +39,14 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
                   ),
 
                 SizedBox(width: 10,),
-                Icon(Icons.play_circle_fill_rounded,size: 24,color: Color(0xFFB7935F),),
+                Icon(Icons.play_circle_fill_rounded,size: 24,color: provider.theme==ThemeMode.dark?Theme.of(context).dividerColor:Theme.of(context).primaryColor),
               ],
             ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  color: AppTheme.isDark?Theme.of(context).primaryColorDark:Colors.white,
+                  color: provider.theme==ThemeMode.dark?Theme.of(context).primaryColorDark:Colors.white,
                   margin: EdgeInsets.all(20),
                   /*elevation: 20,*/
                   child: lines.isNotEmpty
