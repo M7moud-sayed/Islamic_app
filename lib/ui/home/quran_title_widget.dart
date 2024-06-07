@@ -28,16 +28,20 @@ class QuranTitleWidget extends StatelessWidget {
         children: [
           Expanded(
             child: Text(title,
-                style: Theme.of(context).textTheme.bodyMedium,textAlign: TextAlign.center),
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.center),
           ),
           Container(
             width: 1.5,
             height: 35,
-            color: provider.theme==ThemeMode.dark?Theme.of(context).dividerColor:Theme.of(context).primaryColor,
+            color: provider.theme == ThemeMode.dark
+                ? Theme.of(context).dividerColor
+                : Theme.of(context).primaryColor,
           ),
           Expanded(
               child: Text(versesNumber.toString(),
-                  style: Theme.of(context).textTheme.bodyMedium, textAlign: TextAlign.center)),
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  textAlign: TextAlign.center)),
         ],
       ),
     );

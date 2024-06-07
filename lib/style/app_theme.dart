@@ -124,9 +124,10 @@ class AppTheme {
         fontWeight: FontWeight.w400,
         fontFamily: "El Messiri",
       ),
-    )
-    ,dividerTheme: const DividerThemeData(
-    color: darkSecondary,
-    thickness: 1.5,
-  ),);
+    ),
+    dividerTheme: const DividerThemeData(
+      color: darkSecondary,
+      thickness: 1.5,
+    ),
+  );
 }

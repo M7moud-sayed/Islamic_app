@@ -6,17 +6,22 @@ import 'package:islamic_app/ui/hadeth_details/hadeth_details_screen.dart';
 import 'package:islamic_app/ui/home/home_screen.dart';
 import 'package:islamic_app/ui/quran_details/quran_details_screen.dart';
 import 'package:islamic_app/ui/splash/splash_screen.dart';
-
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-      create: (context) => SettingsProvider(), child: const MyApp()));
+      create: (context) => SettingsProvider()
+        ..getLang()
+        ..getTheme(),
+      child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  late SettingsProvider settingsProvider;
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +35,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
-        Locale('en'),
-        Locale('ar'),
-      ],
+      supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale(provider.language),
       theme: AppTheme.LightTheme,
       darkTheme: AppTheme.DarkTheme,

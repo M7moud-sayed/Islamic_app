@@ -52,7 +52,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         : Theme.of(context).primaryColor),
               ),
               child: Text(
-                provider.language=="ar"?"العربية":"English",
+                provider.language == "ar" ? "العربية" : "English",
                 style: Theme.of(context).textTheme.bodySmall,
                 textAlign: TextAlign.center,
               ),

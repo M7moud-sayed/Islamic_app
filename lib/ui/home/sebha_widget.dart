@@ -57,7 +57,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
           padding: const EdgeInsets.all(25),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
-            color: provider.theme==ThemeMode.dark
+            color: provider.theme == ThemeMode.dark
                 ? Theme.of(context).primaryColorDark
                 : Theme.of(context).primaryColor,
           ),
@@ -90,7 +90,7 @@ class _SebhaWidgetState extends State<SebhaWidget> {
           minWidth: 170,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          color: provider.theme==ThemeMode.dark
+          color: provider.theme == ThemeMode.dark
               ? Theme.of(context).dividerColor
               : Theme.of(context).primaryColor,
           onPressed: () {
