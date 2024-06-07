@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Image.asset(
-        provider.theme==ThemeMode.dark
+        provider.theme == ThemeMode.dark
             ? "assets/images/splash_dark_screen.jpg"
             : "assets/images/splash_background.png",
         height: mediaQuery.height,

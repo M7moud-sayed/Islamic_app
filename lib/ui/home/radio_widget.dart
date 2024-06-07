@@ -35,21 +35,21 @@ class RadioWidget extends StatelessWidget {
           Icon(
             Icons.skip_previous_rounded,
             size: 28,
-            color: provider.theme==ThemeMode.dark
+            color: provider.theme == ThemeMode.dark
                 ? AppTheme.darkSecondary
                 : AppTheme.lightPrimary,
           ),
           Icon(
             Icons.play_circle_filled_rounded,
             size: 35,
-            color: provider.theme==ThemeMode.dark
+            color: provider.theme == ThemeMode.dark
                 ? AppTheme.darkSecondary
                 : AppTheme.lightPrimary,
           ),
           Icon(
             Icons.skip_next_rounded,
             size: 28,
-            color: provider.theme==ThemeMode.dark
+            color: provider.theme == ThemeMode.dark
                 ? AppTheme.darkSecondary
                 : AppTheme.lightPrimary,
           ),
