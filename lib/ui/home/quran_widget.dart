@@ -149,7 +149,7 @@ class _QuranWidgetState extends State<QuranWidget> {
             ),
             Expanded(
               child: Center(
-                child: Text(AppLocalizations.of(context)!.chapterNumber,
+                child: Text(AppLocalizations.of(context)!.chapterDigit,
                     style: Theme.of(context).textTheme.bodyLarge),
               ),
             )

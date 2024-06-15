@@ -8,7 +8,7 @@
   "sebha" : "سبحة",
   "settings" : "الاعدادات",
   "chapterTitle" : "اسم السورة",
-  "chapterNumber" : "رقم السورة",
+  "chapterDigit" : "رقم السورة",
   "numberOfPraises" : "عدد التسبيحات" ,
   "holyQuranRadio" : "اذاعة القرآن الكريم"
 }
