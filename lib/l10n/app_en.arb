@@ -8,7 +8,7 @@
   "sebha" : "Sebha",
   "settings" : "Settings",
   "chapterTitle" : "Chapter Title",
-  "chapterNumber" : "Chapter Number",
+  "chapterDigit" : "Chapter Digit",
   "numberOfPraises" : "Number Of Praises" ,
   "holyQuranRadio" : "Holy Quran Radio"
 }
